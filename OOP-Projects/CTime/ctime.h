@@ -1,9 +1,12 @@
 #pragma once
 
 class CTime {
-	int hours, minutes, seconds;
+	int hours;
+	int minutes;
+	int seconds;
 
 public:
 	CTime();
 	CTime(int hours_, int minutes_, int seconds_);
+	CTime(const CTime& time);
 };

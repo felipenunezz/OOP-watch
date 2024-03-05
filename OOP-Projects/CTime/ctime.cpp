@@ -11,3 +11,9 @@ CTime::CTime(int hours_, int minutes_, int seconds_) {
 	minutes = minutes_;
 	seconds = seconds_;
 }
+
+CTime::CTime(const CTime& time) {
+	hours = time.hours;
+	minutes = time.minutes;
+	seconds = time.seconds;
+}
