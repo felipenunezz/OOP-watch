@@ -17,3 +17,5 @@ CTime::CTime(const CTime& time) {
 	minutes = time.minutes;
 	seconds = time.seconds;
 }
+
+CTime::~CTime() {}
