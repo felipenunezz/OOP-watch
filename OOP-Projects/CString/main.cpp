@@ -1,6 +1,15 @@
 #include <iostream>
 #include "string.h"
 
+int main() {
+    CString str_1;
+    CString str_2(str_1);
+    std::cout << str_1.empty() << std::endl;
+    std::cout << str_1.size() << std::endl;
+    std::cout << str_1.compare(str_2) << std::endl;
+    return 0;
+}
+
 /*
 // пример main()
 int main() {

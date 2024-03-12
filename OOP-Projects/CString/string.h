@@ -42,7 +42,7 @@ public:
 
     ~CString();
 
-    //void print() const noexcept;
+    //void print() const noexcept; 
 
     bool empty() const noexcept;
     //bool full() const noexcept;
@@ -72,7 +72,7 @@ public:
     //void resize(size_t n, char c = '\0');     // изменение длины строки
     //void reserve(size_t n = 0);               // увеличение хранилища
 
-    void push_back(char c);                   // вставка символа (в конец)
+    //void push_back(char c);                   // вставка символа (в конец)
     void pop_back();                          // удаление символа (из конца)
 
     //CString& erase(size_t pos, size_t len);    // удаление участка
@@ -85,7 +85,7 @@ public:
     //CString& append(size_t n, char c);
 
     // вставка строки (после указанной позиции)
-    CString& insert(size_t pos, const CString& str);
+    //CString& insert(size_t pos, const CString& str);
     //CString& insert(size_t pos, const CString& str, size_t subpos, size_t sublen);
     //CString& insert(size_t pos, const char* s);
     //CString& insert(size_t pos, const char* s, size_t n);
