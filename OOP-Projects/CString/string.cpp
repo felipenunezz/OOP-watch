@@ -3,7 +3,7 @@
 /// <summary>
 /// Конструктор по умолчанию.
 /// </summary>
-String::String() {
+CString::CString() {
     _size = 0;
     _capacity = STEP_CAPACITY;
     _data = new char[_capacity];
@@ -14,7 +14,7 @@ String::String() {
 /// Конструктор копирования.
 /// </summary>
 /// <param name="str"> - копируемая строка</param>
-String::String(const String& str) {
+CString::CString(const CString& str) {
     _size = str._size;
     _capacity = str._capacity;
     _data = new char[_capacity];
@@ -27,7 +27,7 @@ String::String(const String& str) {
 /// <summary>
 /// Деструктор.
 /// </summary>
-String::~String() {
+CString::~CString() {
     delete[] _data;
     _data = nullptr;
 }
@@ -39,7 +39,7 @@ String::~String() {
 /// true - если строка пуста,
 /// false - иначе.
 /// </returns>
-bool String::empty() const noexcept {
+bool CString::empty() const noexcept {
     return _size == 0;
 }
 
@@ -47,7 +47,7 @@ bool String::empty() const noexcept {
 /// Геттер для размера строки.
 /// </summary>
 /// <returns>размер (длина) строки</returns>
-size_t String::size() const noexcept {
+size_t CString::size() const noexcept {
     return _size;
 }
 /// <summary>
@@ -59,7 +59,7 @@ size_t String::size() const noexcept {
 /// -1 - если исходная строка меньше,
 /// 0 - если строки совпадают.
 /// </returns>
-int String::compare(const String& str) const noexcept {
+int CString::compare(const CString& str) const noexcept {
     for (size_t i = 0; i < algorithms::min(_size, str._size); i++) {
         if (this->_data[i] < str._data[i]) {
             return 1;
@@ -73,31 +73,33 @@ int String::compare(const String& str) const noexcept {
     else return 0;
 }
 
+/*
 /// <summary>
 /// Вставка символа в конец строки.
 /// </summary>
 /// <param name="c"> - символ для вставки</param>
-void String::push_back(char c) {
+void CString::push_back(char c) {
     if (this->full()) {
         this->reserve(_capacity);
     }
 
     _data[_size] = c;
     _data[++_size] = '\0';
-}
+}*/
 
 /// <summary>
 /// Удаление символа из конца строки.
 /// <exception cref="std::logic_error">Исключение, если исходная строка пуста.</exception>
 /// </summary>
-void String::pop_back() {
+void CString::pop_back() {
     if (this->empty()) {
         throw std::logic_error("Error in function \
-                  \"void pop_back()\": source string is empty");
+                  \"void pop_back()\": source CString is empty");
     }
     _data[--_size] = '\0';
 }
 
+/*
 // лишь пример реализации
 /// <summary>
 /// Вставка строки после заданной позиции в исходной.
@@ -105,14 +107,14 @@ void String::pop_back() {
 /// <param name="pos"> - позиция для вставки в исходной строке.</param>
 /// <param name="str"> - строка для вставки</param>
 /// <returns>изменённая исходная строка</returns>
-String& String::insert(size_t pos, const String& str) {
-    String begin(*this, 0, pos);
-    String end(*this, pos, _size - pos);
+CString& CString::insert(size_t pos, const CString& str) {
+    CString begin(*this, 0, pos);
+    CString end(*this, pos, _size - pos);
     begin.append(str);
     begin.append(end);
     this->swap(begin);
     return *this;
-}
+}*/
 
 /// <summary>
 /// Поиск первого совпадения в исходной строке с одним из символов заданной строки.
@@ -120,7 +122,7 @@ String& String::insert(size_t pos, const String& str) {
 /// <param name="str"> - набор символов для поиска</param>
 /// <param name="pos"> - позиция, с которой следует начинать поиск</param>
 /// <returns></returns>
-size_t String::find_first_of(const String& str, size_t pos = 0) const {
+size_t CString::find_first_of(const CString& str, size_t pos) const {
     for (size_t i = pos; i < _size; i++) {
         for (size_t j = 0; j < str._size; j++) {
             if (_data[i] == str._data[j]) {
