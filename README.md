@@ -1,6 +1,8 @@
 # OOP
 Repository with OOP materials and templates of projects by "Programming Base" (2nd term)
 
+https://docs.google.com/spreadsheets/d/1ncJOyh2_-pdxClrKh8tryYY3kNn6j9ZE0wt4IC6BjJA/edit?usp=drivesdk
+
 ## Ранее выданные работы
 
 **ДЗ0.** Реализация творческой работы "Футбол" с подготовкой презентации и защитой выполненного проекта.
